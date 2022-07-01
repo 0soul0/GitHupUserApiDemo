@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="userItem"
+            type="com.sideproject.githupapidemo.model.UserItem" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:background="@drawable/bg_bottom_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                app:titleTextColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/white"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_user"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="@dimen/space_16"
+                android:contentDescription="@string/users"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolbar"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                style="@style/textView_basic_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:text="@{userItem.name,default=@string/users}"
+                app:layout_constraintEnd_toEndOf="@id/img_user"
+                app:layout_constraintStart_toStartOf="@id/img_user"
+                app:layout_constraintTop_toBottomOf="@id/img_user" />
+
+            <ImageView
+                android:id="@+id/img_icon"
+                android:layout_width="17dp"
+                android:layout_height="11dp"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginBottom="@dimen/space_16"
+                android:contentDescription="@string/users"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/tv_name"
+                app:layout_constraintStart_toStartOf="@id/tv_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_name"
+                app:srcCompat="@android:drawable/btn_star_big_on"
+                tools:ignore="ImageContrastCheck"
+                tools:srcCompat="@android:drawable/btn_star_big_on" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="@dimen/space"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_person"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginTop="@dimen/space_16"
+                android:contentDescription="@string/users"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_person"
+                tools:srcCompat="@drawable/ic_person" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/space"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/img_person"
+                app:layout_constraintStart_toEndOf="@+id/img_person"
+                app:layout_constraintTop_toTopOf="@id/img_person">
+
+                <TextView
+                    android:id="@+id/tv_user_name"
+                    style="@style/textView_basic_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{userItem.login,default=@string/users}" />
+
+                <TextView
+                    android:id="@+id/tv_user_type"
+                    style="@style/textView_basic_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_user_type"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/space_8"
+                    android:paddingEnd="@dimen/space_8"
+                    android:text="@{userItem.type,default=@string/type}" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_position"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginTop="@dimen/space"
+                android:contentDescription="@string/users"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_person"
+                app:srcCompat="@drawable/ic_map"
+                tools:srcCompat="@drawable/ic_map" />
+
+            <TextView
+                android:id="@+id/tv_position"
+                style="@style/textView_basic_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space"
+                android:text="@{userItem.location,default=@string/position}"
+                app:layout_constraintBottom_toBottomOf="@+id/img_position"
+                app:layout_constraintStart_toEndOf="@+id/img_position"
+                app:layout_constraintTop_toTopOf="@id/img_position" />
+
+            <ImageView
+                android:id="@+id/img_link"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginTop="@dimen/space"
+                android:contentDescription="@string/users"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_position"
+                app:srcCompat="@drawable/ic_link"
+                tools:srcCompat="@drawable/ic_link" />
+
+            <TextView
+                android:id="@+id/tv_link"
+                style="@style/textView_basic_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space"
+                android:text="@{userItem.html_url,default=@string/link}"
+                android:textColor="@color/blue"
+                app:layout_constraintBottom_toBottomOf="@+id/img_link"
+                app:layout_constraintStart_toEndOf="@+id/img_link"
+                app:layout_constraintTop_toTopOf="@id/img_link" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+
+
+</layout>

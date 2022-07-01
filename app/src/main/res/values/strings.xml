@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GitHupAPIDemo</string>
+    <string name="users">Users</string>
+    <string name="type">type</string>
+    <string name="position">position</string>
+    <string name="link">link</string>
+</resources>
