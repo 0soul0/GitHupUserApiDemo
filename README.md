@@ -15,5 +15,5 @@ width="120" height="240" src="https://user-images.githubusercontent.com/16238242
 </ul>
 
 <h3>使用技術</h3>
-<p>Android、Kotlin、<b>MVP</b>、Jetpack(Hilt、Navigation、Page3、Retofit、LiveData)、Coroutine</p>
+<p>Android、Kotlin、<b>MVP</b>、Jetpack(Hilt、Navigation、Page3、Retrofit、LiveData)、Coroutine</p>
 
